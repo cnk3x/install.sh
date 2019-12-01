@@ -15,6 +15,7 @@ set -e
 
 mkdir -p /etc/caddy/caddy.d /etc/caddy/cert
 curl -Ss -o /usr/local/bin/caddy ${caddyUrl}/caddy
-curl -Ss -o /etc/systemd/system/caddy.service ${caddyUrl}/Caddyfile
+curl -Ss -o /etc/systemd/system/caddy.service ${caddyUrl}/caddy.service
+curl -Ss -o /etc/caddy/Caddyfile ${caddyUrl}/Caddyfile
 chmod +x /usr/local/bin/caddy
 systemctl daemon-reload
