@@ -1,0 +1,41 @@
+{
+  "inbounds": [
+    {
+      "listen": "127.0.0.1",
+      "port": 2345,
+      "protocol": "vmess",
+      "settings": {
+        "disableInsecureEncryption": true,
+        "clients": [
+          {
+            "id": "{uid}",
+            "alterId": 4,
+            "security": "auto",
+            "level": 0
+          }
+        ]
+      },
+      "streamSettings": {
+        "network": "h2",
+        "httpSettings": {
+          "host": ["{h2host}.${h2domain}"],
+          "path": "/{h2host}"
+        },
+        "security": "tls",
+        "tlsSettings": {
+          "certificates": [
+            {
+              "certificateFile": "/etc/caddy/cert/${h2domain}.pem",
+              "keyFile": "/etc/caddy/cert/${h2domain}.key"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "outbounds": [
+    {
+      "protocol": "freedom"
+    }
+  ]
+}

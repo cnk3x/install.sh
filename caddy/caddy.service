@@ -1,0 +1,20 @@
+[Unit]
+Description=Caddy HTTP/2 web server
+Documentation=https://caddyserver.com/docs
+After=network-online.target
+Wants=network-online.target systemd-networkd-wait-online.service
+
+[Service]
+Type=simple
+User=nobody
+Restart=on-failure
+RestartSec=5s
+
+WorkingDirectory=/etc/caddy
+ExecStart=/usr/local/bin/caddy -agree=true
+
+LimitNOFILE=1048576
+LimitNPROC=512
+
+[Install]
+WantedBy=multi-user.target
