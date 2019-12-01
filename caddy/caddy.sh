@@ -9,6 +9,7 @@ fi
 
 if [ -f "/etc/systemd/system/caddy.service" ]; then
     echo "caddy.service 已存在"
+    exit 1
 fi
 
 set -e
