@@ -25,8 +25,9 @@ curl -sSL -o /usr/local/v2ray/v2ctl ${baseURL}/v2ctl
 curl -sSL -o /usr/local/v2ray/geoip.dat ${baseURL}/geoip.dat
 curl -sSL -o /usr/local/v2ray/geosite.dat ${baseURL}/geosite.dat
 
-curl -sSL -o /etc/systemd/system/v2ray.service ${baseURL}/v2ray.service
 curl -sSL -o /etc/v2ray/config.json ${baseURL}/config.json
+curl -sSL -o /etc/caddy/caddy.d/v2ray.caddy ${baseURL}/v2ray.caddy
+curl -sSL -o /etc/systemd/system/v2ray.service ${baseURL}/v2ray.service
 
 sed -i "s/{h2host}/${h2host}/g" /etc/v2ray/config.json
 sed -i "s/{h2domain}/${h2domain}/g" /etc/v2ray/config.json

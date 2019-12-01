@@ -2,7 +2,8 @@
 
 systemctl stop v2ray
 systemctl disable v2ray
-rm /etc/systemd/system/v2ray.service
+rm -f /etc/systemd/system/v2ray.service
 systemctl daemon-reload
 rm -rf /etc/v2ray/
 rm -ff /usr/local/v2ray
+rm -rf /etc/caddy/caddy.d/v2ray.caddy
