@@ -5,11 +5,13 @@ baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray"
 
 h2domain=$1
 h2host=$2
-uid=$(cat /proc/sys/kernel/random/uuid)
 
 if [ -z "${h2host}" ]; then
     h2host="$(hostname)"
 fi
+
+echo "h2domain: ${h2domain}"
+echo "h2host: ${h2host}"
 
 if [ -z "${h2domain}" ]; then
     echo "v2ray.sh domain [host]"
@@ -26,13 +28,15 @@ wget --no-cache -nv -O /etc/v2ray/config.json ${baseURL}/config.json
 wget --no-cache -nv -O /etc/caddy/caddy.d/v2ray.caddy ${baseURL}/v2ray.caddy
 wget --no-cache -nv -O /etc/systemd/system/v2ray.service ${baseURL}/v2ray.service
 
-sed -i "s/{h2host}/${h2host}/g" /etc/v2ray/config.json
-sed -i "s/{h2domain}/${h2domain}/g" /etc/v2ray/config.json
+uid=$(cat /proc/sys/kernel/random/uuid)
 sed -i "s/{uid}/${uid}/g" /etc/v2ray/config.json
-
-sed -i "s/{h2host}/${h2host}/g" /etc/caddy/caddy.d/v2ray.caddy
-sed -i "s/{h2domain}/${h2domain}/g" /etc/caddy/caddy.d/v2ray.caddy
 sed -i "s/{uid}/${uid}/g" /etc/caddy/caddy.d/v2ray.caddy
+
+sed -i "s/{h2host}/${h2host}/g" /etc/v2ray/config.json
+sed -i "s/{h2host}/${h2host}/g" /etc/caddy/caddy.d/v2ray.caddy
+
+sed -i "s/{h2domain}/${h2domain}/g" /etc/v2ray/config.json
+sed -i "s/{h2domain}/${h2domain}/g" /etc/caddy/caddy.d/v2ray.caddy
 
 chmod +x /usr/local/v2ray/v2ray
 chmod +x /usr/local/v2ray/v2ctl
