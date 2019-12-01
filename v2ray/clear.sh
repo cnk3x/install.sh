@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 systemctl stop v2ray
 systemctl disable v2ray

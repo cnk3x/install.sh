@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 set -e
 baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray"

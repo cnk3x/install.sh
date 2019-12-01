@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 systemctl stop caddy
 systemctl disable caddy
