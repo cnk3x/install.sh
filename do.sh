@@ -3,8 +3,6 @@
 set -e
 app=$1
 
-echo ${@:3}
-
 case "$2" in
 install)
     echo "安装 ${app}"
