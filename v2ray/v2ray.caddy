@@ -1,5 +1,5 @@
 https://{h2host}.{h2domain} {
-    tls ssl/${h2domain}.pem ssl/${h2domain}.key
+    tls ssl/{h2domain}.pem ssl/{h2domain}.key
     root /data/www/{h2host}
     proxy /{h2host} https://127.0.0.1:2345 {
         header_upstream Host "{h2host}.{h2domain}"
