@@ -7,7 +7,7 @@ Type=simple
 User=root
 Restart=on-failure
 RestartSec=5s
-ExecStart=/user/local/bin/frps -c /etc/frps/frps.ini
+ExecStart=/usr/local/bin/frps -c /etc/frps/frps.ini
 
 [Install]
 WantedBy=multi-user.target
