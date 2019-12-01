@@ -7,7 +7,7 @@ h2host=$1
 h2domain=$2
 uid=$(cat /proc/sys/kernel/random/uuid)
 
-mkdir -p /etc/v2ray /usr/local/v2ray /etc/v2ray /etc/caddy.d /data/www/${h2host}
+mkdir -p /etc/v2ray /usr/local/v2ray /etc/v2ray /etc/caddy/caddy.d /data/www/${h2host}
 
 wget --no-cache -O /usr/local/v2ray/v2ray ${baseURL}/v2ray
 wget --no-cache -O /usr/local/v2ray/v2ctl ${baseURL}/v2ctl
