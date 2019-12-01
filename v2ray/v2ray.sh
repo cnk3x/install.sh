@@ -20,13 +20,13 @@ uid=$(cat /proc/sys/kernel/random/uuid)
 
 mkdir -p /etc/v2ray /usr/local/v2ray /etc/v2ray /data/www/${h2host}
 
-curl -Ss -o /usr/local/v2ray/v2ray ${baseURL}/v2ray
-curl -Ss -o /usr/local/v2ray/v2ctl ${baseURL}/v2ctl
-curl -Ss -o /usr/local/v2ray/geoip.dat ${baseURL}/geoip.dat
-curl -Ss -o /usr/local/v2ray/geosite.dat ${baseURL}/geosite.dat
+curl -sSL -o /usr/local/v2ray/v2ray ${baseURL}/v2ray
+curl -sSL -o /usr/local/v2ray/v2ctl ${baseURL}/v2ctl
+curl -sSL -o /usr/local/v2ray/geoip.dat ${baseURL}/geoip.dat
+curl -sSL -o /usr/local/v2ray/geosite.dat ${baseURL}/geosite.dat
 
-curl -Ss -o /etc/systemd/system/v2ray.service ${baseURL}/v2ray.service
-curl -Ss -o /etc/v2ray/config.json ${baseURL}/config.json
+curl -sSL -o /etc/systemd/system/v2ray.service ${baseURL}/v2ray.service
+curl -sSL -o /etc/v2ray/config.json ${baseURL}/config.json
 
 sed -i "s/{h2host}/${h2host}/g" /etc/v2ray/config.json
 sed -i "s/{h2domain}/${h2domain}/g" /etc/v2ray/config.json
