@@ -9,14 +9,13 @@ uid=$(cat /proc/sys/kernel/random/uuid)
 
 mkdir -p /etc/v2ray /usr/local/v2ray /etc/v2ray /etc/caddy.d /data/www/${h2host}
 
-curl -sSL -o /usr/local/v2ray/v2ray ${baseURL}/v2ray
-curl -sSL -o /usr/local/v2ray/v2ctl ${baseURL}/v2ctl
-curl -sSL -o /usr/local/v2ray/geoip.dat ${baseURL}/geoip.dat
-curl -sSL -o /usr/local/v2ray/geosite.dat ${baseURL}/geosite.dat
-
-curl -sSL -o /etc/v2ray/config.json ${baseURL}/config.json
-curl -sSL -o /etc/caddy/caddy.d/v2ray.caddy ${baseURL}/v2ray.caddy
-curl -sSL -o /etc/systemd/system/v2ray.service ${baseURL}/v2ray.service
+wget --no-cache -O /usr/local/v2ray/v2ray ${baseURL}/v2ray
+wget --no-cache -O /usr/local/v2ray/v2ctl ${baseURL}/v2ctl
+wget --no-cache -O /usr/local/v2ray/geoip.dat ${baseURL}/geoip.dat
+wget --no-cache -O /usr/local/v2ray/geosite.dat ${baseURL}/geosite.dat
+wget --no-cache -O /etc/v2ray/config.json ${baseURL}/config.json
+wget --no-cache -O /etc/caddy/caddy.d/v2ray.caddy ${baseURL}/v2ray.caddy
+wget --no-cache -O /etc/systemd/system/v2ray.service ${baseURL}/v2ray.service
 
 sed -i "s/{h2host}/${h2host}/g" /etc/v2ray/config.json
 sed -i "s/{h2domain}/${h2domain}/g" /etc/v2ray/config.json
