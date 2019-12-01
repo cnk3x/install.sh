@@ -14,7 +14,7 @@ fi
 
 set -e
 
-mkdir -p /etc/caddy/caddy.d /etc/caddy/cert
+mkdir -p /etc/caddy
 curl -sSL -o /usr/local/bin/caddy ${caddyUrl}/caddy
 curl -sSL -o /etc/systemd/system/caddy.service ${caddyUrl}/caddy.service
 curl -sSL -o /etc/caddy/Caddyfile ${caddyUrl}/Caddyfile

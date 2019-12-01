@@ -18,7 +18,7 @@ h2host=$1
 h2domain=$2
 uid=$(cat /proc/sys/kernel/random/uuid)
 
-mkdir -p /etc/v2ray /usr/local/v2ray /etc/v2ray /data/www/${h2host}
+mkdir -p /etc/v2ray /usr/local/v2ray /etc/v2ray /etc/caddy.d /data/www/${h2host}
 
 curl -sSL -o /usr/local/v2ray/v2ray ${baseURL}/v2ray
 curl -sSL -o /usr/local/v2ray/v2ctl ${baseURL}/v2ctl
@@ -40,3 +40,21 @@ chmod +x /usr/local/v2ray/v2ray
 chmod +x /usr/local/v2ray/v2ctl
 
 systemctl daemon-reload
+
+echo
+echo "服务器配置"
+echo "协议: vmess"
+echo "服务器地址: ${h2host}.${h2domain}"
+echo "端口号: ${h2host}.${h2domain}"
+echo "ID: ${uid}"
+echo "alterId: 4 level: 0"
+echo "security: auto"
+echo
+echo "传输配置"
+echo "网络: h2"
+echo "主机: ${h2host}.${h2domain}"
+echo "路径: /${h2host}"
+echo
+echo "安全: tls"
+echo "allowInsecure: yes"
+echo "tls 服务名: ${h2host}.${h2domain}"
