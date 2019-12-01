@@ -18,15 +18,15 @@
       "streamSettings": {
         "network": "h2",
         "httpSettings": {
-          "host": ["{h2host}.${h2domain}"],
+          "host": ["{h2host}.{h2domain}"],
           "path": "/{h2host}"
         },
         "security": "tls",
         "tlsSettings": {
           "certificates": [
             {
-              "certificateFile": "/etc/caddy/cert/${h2domain}.pem",
-              "keyFile": "/etc/caddy/cert/${h2domain}.key"
+              "certificateFile": "/etc/caddy/cert/{h2domain}.pem",
+              "keyFile": "/etc/caddy/cert/{h2domain}.key"
             }
           ]
         }
