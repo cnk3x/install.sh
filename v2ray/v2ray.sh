@@ -12,7 +12,7 @@ if [ -f "/etc/systemd/system/v2ray.service" ]; then
     exit 1
 fi
 
-set -e
+set -ex
 
 h2host=$1
 h2domain=$2

@@ -12,7 +12,7 @@ if [ -f "/etc/systemd/system/caddy.service" ]; then
     exit 1
 fi
 
-set -e
+set -ex
 
 mkdir -p /etc/caddy
 curl -sSL -o /usr/local/bin/caddy ${caddyUrl}/caddy
