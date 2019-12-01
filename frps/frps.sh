@@ -4,7 +4,7 @@ set -e
 
 subdomain_host=$1
 token=$(openssl rand -hex 16)
-dashboard_pwd=$(openssl rand -hex 16)
+dashboard_pwd=$(openssl rand -hex 3)
 baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/frps/"
 
 mkdir -p /etc/frps /etc/caddy/caddy.d
@@ -23,6 +23,8 @@ chmod +x /usr/local/bin/frps
 systemctl daemon-reload
 
 echo
-echo "TOKEN: ${token}"
+echo "服务器: frps.${subdomain_host}"
+echo "密钥: ${token}"
+echo "面板: https://frps.${subdomain_host}"
 echo "账号: admin"
 echo "密码: ${dashboard_pwd}"
