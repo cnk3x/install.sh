@@ -13,7 +13,7 @@ Group=root
 Environment=CADDYPATH=/etc/caddy/cert
 
 WorkingDirectory=/etc/caddy
-ExecStart=/usr/local/bin/caddy -log stdout -log-timestamps=false -agree=true -root=/var/tmp
+ExecStart=/usr/local/bin/caddy -log stdout -log-timestamps=false -agree=true -conf /etc/caddy/Caddyfile -root=/var/tmp
 ExecReload=/bin/kill -USR1 $MAINPID
 KillMode=mixed
 KillSignal=SIGQUIT
