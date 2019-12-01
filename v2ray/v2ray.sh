@@ -3,9 +3,18 @@
 set -e
 baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray"
 
-h2host=$1
-h2domain=$2
+h2domain=$1
+h2host=$2
 uid=$(cat /proc/sys/kernel/random/uuid)
+
+if [ -z "${h2host}" ]; then
+    h2host="$(hostname)"
+fi
+
+if [ -z "${h2domain}" ]; then
+    echo "v2ray.sh domain [host]"
+    exit 1
+fi
 
 mkdir -p /etc/v2ray /usr/local/v2ray /etc/v2ray /etc/caddy/caddy.d /data/www/${h2host}
 
