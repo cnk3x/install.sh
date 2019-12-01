@@ -26,8 +26,6 @@ PrivateTmp=true
 PrivateDevices=false
 ProtectHome=true
 ProtectSystem=full
-ReadWritePaths=/etc/caddy
-ReadWriteDirectories=/etc/caddy
 
 [Install]
 WantedBy=multi-user.target
