@@ -21,10 +21,16 @@ init)
 start)
     systemctl start ${app}
     ;;
+status)
+    systemctl status ${app}
+    ;;
+stop)
+    systemctl stop ${app}
+    ;;
 log)
     journalctl -fu ${app}
     ;;
 *)
-    echo "sh do.sh (v2ray | frps | caddy) (install | uninstall | init | start | log)"
+    echo "sh do.sh [v2ray | frps | caddy] [install | uninstall | init | start | status | stop | log]"
     ;;
 esac
