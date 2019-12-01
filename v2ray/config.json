@@ -25,8 +25,8 @@
         "tlsSettings": {
           "certificates": [
             {
-              "certificateFile": "/etc/caddy/cert/{h2domain}.pem",
-              "keyFile": "/etc/caddy/cert/{h2domain}.key"
+              "certificateFile": "/etc/caddy/ssl/{h2domain}.pem",
+              "keyFile": "/etc/caddy/ssl/{h2domain}.key"
             }
           ]
         }
