@@ -1,0 +1,17 @@
+https://*.{subdomain_host} {
+    gzip
+    tls ssl/{subdomain_host}.pem ssl/{subdomain_host}.key
+    proxy / http://127.0.0.1:30002{
+        transparent
+        websocket
+    }
+}
+
+https://frps.{subdomain_host} {
+    gzip
+    tls ssl/{subdomain_host}.pem ssl/{subdomain_host}.key
+    proxy / http://127.0.0.1:30004{
+        transparent
+        websocket
+    }
+}
