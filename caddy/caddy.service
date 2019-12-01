@@ -6,7 +6,7 @@ Wants=network-online.target systemd-networkd-wait-online.service
 
 [Service]
 Restart=on-abnormal
-Environment=CADDYPATH=/etc/caddy/cert
+Environment=CADDYPATH=/etc/caddy/ssl
 WorkingDirectory=/etc/caddy
 ExecStart=/usr/local/bin/caddy -log stdout -log-timestamps=false -agree=true -conf /etc/caddy/Caddyfile -root=/var/tmp
 ExecReload=/bin/kill -USR1 $MAINPID
