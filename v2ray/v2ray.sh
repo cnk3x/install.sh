@@ -1,18 +1,7 @@
 #!/bin/sh
 
-baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray"
-
-if [ -f "/usr/local/v2ray/v2ray" ]; then
-    echo "v2ray 已存在"
-    exit 1
-fi
-
-if [ -f "/etc/systemd/system/v2ray.service" ]; then
-    echo "v2ray.service 已存在"
-    exit 1
-fi
-
 set -ex
+baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray"
 
 h2host=$1
 h2domain=$2
