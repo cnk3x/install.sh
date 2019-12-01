@@ -3,6 +3,12 @@
 set -e
 
 subdomain_host=$1
+
+if [ -z "${subdomain_host}" ]; then
+    echo "v2ray.sh domain [host]"
+    exit 1
+fi
+
 token=$(openssl rand -hex 16)
 dashboard_pwd=$(openssl rand -hex 3)
 baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/frps/"
