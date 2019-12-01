@@ -1,6 +1,6 @@
 #!/bin/sh
 
-baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray/"
+baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray"
 
 if [ -f "/usr/local/v2ray/v2ray" ]; then
     echo "v2ray 已存在"
