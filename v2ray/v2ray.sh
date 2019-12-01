@@ -7,11 +7,11 @@ h2domain=$1
 h2host=$2
 uid=$(cat /proc/sys/kernel/random/uuid)
 
-if [ -z "${h2host}" ]; then
+if [ -n "${h2host}" ]; then
     h2host="$(hostname)"
 fi
 
-if [ -z "${h2domain}" ]; then
+if [ -n "${h2domain}" ]; then
     echo "v2ray.sh domain [host]"
     exit 1
 fi
