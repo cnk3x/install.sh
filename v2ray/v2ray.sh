@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -ex
+set -e
 baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/v2ray"
 
 h2host=$1
@@ -30,21 +30,20 @@ chmod +x /usr/local/v2ray/v2ctl
 
 systemctl daemon-reload
 
-echo <<EOF
-服务器配置
-协议: vmess
-服务器地址: ${h2host}.${h2domain}
-端口号: ${h2host}.${h2domain}
-ID: ${uid}
-alterId: 4 level: 0
-security: auto
-
-传输配置
-网络: h2
-主机: ${h2host}.${h2domain}
-路径: /${h2host}
-
-安全: tls
-allowInsecure: yes
-tls 服务名: ${h2host}.${h2domain}
-EOF
+echo
+echo "服务器配置"
+echo "协议: vmess"
+echo "服务器地址: ${h2host}.${h2domain}"
+echo "端口号: ${h2host}.${h2domain}"
+echo "ID: ${uid}"
+echo "alterId: 4 level: 0"
+echo "security: auto"
+echo
+echo "传输配置"
+echo "网络: h2"
+echo "主机: ${h2host}.${h2domain}"
+echo "路径: /${h2host}"
+echo
+echo "安全: tls"
+echo "allowInsecure: yes"
+echo "tls 服务名: ${h2host}.${h2domain}"

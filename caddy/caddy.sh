@@ -1,5 +1,5 @@
 #!/bin/sh
-set -ex
+set -e
 
 baseURL="https://raw.githubusercontent.com/shuxs/install.sh/master/caddy/"
 mkdir -p /etc/caddy
