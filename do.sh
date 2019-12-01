@@ -15,7 +15,16 @@ uninstall)
     echo "卸载 ${app}"
     wget -q -O - https://raw.githubusercontent.com/shuxs/install.sh/master/${app}/clear.sh | sh
     ;;
+init)
+    systemctl enable ${app}
+    ;;
+start)
+    systemctl start ${app}
+    ;;
+log)
+    journalctl -fu ${app}
+    ;;
 *)
-    echo "sh do.sh (v2ray | frps | caddy) (install | uninstall)"
+    echo "sh do.sh (v2ray | frps | caddy) (install | uninstall | init | start | log)"
     ;;
 esac
