@@ -1,11 +1,11 @@
 #!/bin/sh
 set -e
 app=$1
-case "${app}" in
+case "$2" in
 install)
     echo "安装 ${app}"
     wget -q -O ${app}.sh https://raw.githubusercontent.com/shuxs/install.sh/master/${app}/${app}.sh
-    sh ${app}.sh ${@:2}
+    sh ${app}.sh ${@:3}
     rm -f ${app}.sh
     ;;
 uninstall)
